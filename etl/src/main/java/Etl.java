@@ -1,5 +1,5 @@
-import java.util.List;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -9,8 +9,7 @@ public class Etl {
 
   	Map<String, Integer> letterScore = new HashMap<String, Integer>();
 
-
-  	for(Map.Entry<Integer, List<String>> entry : old.entrySet()) {
+    for(Map.Entry<Integer, List<String>> entry : old.entrySet()) {
       int value = entry.getKey();
       List<String> letters = entry.getValue();
 
