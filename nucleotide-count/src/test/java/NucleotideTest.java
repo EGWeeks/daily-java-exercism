@@ -80,4 +80,16 @@ public class NucleotideTest {
         entry('T', 21)
     );
   }
+
+  @Test
+  public void testCountsAllNicleos() {
+    String s = "AGCTTCATCTGACTAAGG";
+    DNA dena = DNA(s);
+    assertThat(dna.nucleotideCounts()).hasSize(4).contains(
+        entry('A', 5),
+        entry('C', 4),
+        entry('G', 4),
+        entry('T', 5)
+    );
+  }
 }
