@@ -1,29 +1,40 @@
-import java.util.map;
+import java.util.HashMap;
+
 
 public class DNA {
+	public String dna;
+	public HashMap<Character, Integer> nucleotides;
 
-	private String dna;
-	private Map<String, Integer> nucleotides;
-
-	public DNA() {
+	public DNA(String dna) {
+		System.out.printf("%s", dna);
 		dna = dna;
 		nucleotides  = new HashMap();
-		nucleotides.put("A", 0);
-		nucleotides.put("C", 0);
-		nucleotides.put("G", 0);
-		nucleotides.put("T", 0);
+		dnaSeparator(dna);
 	}
 
-	// not sure if this method needs to return or
-	// if just calling it the test will be able to see the map
-	// might sound stupid but ... i'll figure it out.
-	public nucleotideCounts() {
+	public void dnaSeparator(String dna) {
+			nucleotides.put('A', 0);
+			nucleotides.put('C', 0);
+			nucleotides.put('G', 0);
+			nucleotides.put('T', 0);
 
+		if(dna != null && !dna.isEmpty()) {
+			for(int i = 0; i < dna.length(); i++) {
+				char strand = dna.charAt(i);
+				nucleotides.put(strand, nucleotides.get(strand) + 1);
+			}
+		}
 	}
 
-	public int count(String nucleotide) {
-		// This SHOULD return the value of the nucleotide passed in
-		return nucleotides.get(nucleotide);
+	public HashMap<Character, Integer> nucleotideCounts() {
+		return nucleotides;
 	}
 
+	public int count(char nucleotide) {
+		if(nucleotides.containsKey(nucleotide)) {
+			return nucleotides.get(nucleotide);
+		} else {
+			throw new IllegalArgumentException();
+		}
+	}
 }
