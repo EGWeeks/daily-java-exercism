@@ -6,7 +6,6 @@ public class DNA {
 	public HashMap<Character, Integer> nucleotides;
 
 	public DNA(String dna) {
-		System.out.printf("%s", dna);
 		dna = dna;
 		nucleotides  = new HashMap();
 		dnaSeparator(dna);
