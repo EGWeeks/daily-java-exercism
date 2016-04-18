@@ -1,16 +1,18 @@
 import java.util.HashMap;
 
-
 public class DNA {
-	public String dna;
-	public HashMap<Character, Integer> nucleotides;
+
+	private String dna;
+	private HashMap<Character, Integer> nucleotides;
 
 	public DNA(String dna) {
 		dna = dna;
 		nucleotides  = new HashMap();
+
 		dnaSeparator(dna);
 	}
 
+	// Parses DNA String to Map collection
 	public void dnaSeparator(String dna) {
 			nucleotides.put('A', 0);
 			nucleotides.put('C', 0);
@@ -25,10 +27,12 @@ public class DNA {
 		}
 	}
 
+	// Returns the whole Map
 	public HashMap<Character, Integer> nucleotideCounts() {
 		return nucleotides;
 	}
 
+	// Returns the count of a single nucleotide
 	public int count(char nucleotide) {
 		if(nucleotides.containsKey(nucleotide)) {
 			return nucleotides.get(nucleotide);
