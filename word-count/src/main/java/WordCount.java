@@ -1,15 +1,3 @@
-
-// 1. split phrase between each word
-//	 a. each word must be in array
-// 1.5. create hashmap with key as each array item 
-//	 a. set hashmap values to default 1
-// 2. iterate over array
-// 	 a. nest for loop or forEach method
-// 3. take outside for loop current value and check 
-// that value with inside for loop of same array
-//	 a. if value is at same index skip it / no plus one
-// 4. return hashmap
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
@@ -46,13 +34,5 @@ public class WordCount {
 		}
 
 		return wordCount;
-	}
-
-	public static void main(String args[]) {
-		WordCount wc = new WordCount();
-		System.out.println(wc.phrase("go Go GO"));
-
-		WordCount word = new WordCount();
-		System.out.println(word.phrase("car : carpet as java : javascript!!&@$%^&"));
 	}
 }
